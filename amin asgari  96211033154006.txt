@@ -1,0 +1,29 @@
+select * from person;
+select * from studebt;
+select count(*), mobile from person group by mobile;
+select max(*),city from person group by mobile;
+select count(id),city from person group by city having(id)>2;
+
+select sum(id) from person;
+select replace(first_name,N'Ó','Õ')from person;
+selecr * from person where id>=3 and id<=7;
+selecr * from person where id between 3 and 7;
+selecr * from person order by national_code asc;
+selecr * from person where first_name like N'%Ç';
+update person set mobile=null where id =8;
+select top 3 * from person order by id desc;
+
+
+select p.id as N'ÔäÇÓå',p.first_name as N'äÇã', p.last_name,s.student_number from person p left join student s on p.id=s.person_id;
+select * from person,student where person.id=student.person_id;
+insert inti major(title,description)values('hesabdari','bababababa');
+insert into student(person_id,student_number,edu_level,major_id)values(3,96124,1,null);
+update student set major_id=1;
+select * from student left join major on student.major_id=major.id union all;
+select * from student rightjoin major on student.major_id=major.id where major_id is null;
+
+
+insert into student(person_id,student_number,edu_level,major_id)values(2,111,1,1);
+insert into person (first_name,last_name,national_code,mobile)values(N'Çãíä',N'ÇÕÛÑí',N'0002',N'0913'),(N'Úáí',N'ÌÚİÑí',N'0003',N'0921'),(N'ãÍãÏ',N'ÈÇŞÑí',N'0004',N'0937'),(N'ÌæÇÏ',N'ÇÍãÏí',N'000',N'');
+update person set mobile=concat('ÓíÏ',first_name)where first_name=N'ÇãíÑ ÍÓíä'or national_code='0001';
+delete from person where id =4;
